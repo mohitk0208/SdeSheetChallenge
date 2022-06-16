@@ -25,7 +25,7 @@ codestudio :
   # 3. if the element is in the set, return the element
   # 4. else, add the element to the set
 
-# approach 3 using slow and fast pointer
+# approach 3 using slow and fast pointer : Floyd's tortoise and hare algorithm
   # move the slow pointer by 1 element
   # move the fast pointer by 2 elements
   # after first collision

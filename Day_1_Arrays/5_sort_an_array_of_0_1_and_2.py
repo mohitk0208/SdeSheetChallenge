@@ -44,11 +44,14 @@ class Solution:
 
 
 # codestudio solution
-    count = [0, 0 , 0 ]
+    count = [0, 0 , 0 ]             # count 0's , 1's and 2's
 
     for x in arr:
         count[x] += 1
 
+                                    # store 0's in the front
+                                    # store 1's in the middle
+                                    # store 2's in the end
     for i in range(len(arr)):
         if i < count[0]:
             arr[i] = 0

@@ -25,6 +25,7 @@ codestudio : https://www.codingninjas.com/codestudio/problems/873366?topList=str
 
 # solution
 # approach 1 : using extra memory (set data structure)
+# SC -> O(n) and TC -> O(n)
 class Solution:
     # @param A : tuple of integers
     # @return a list of integers
