@@ -17,15 +17,15 @@ codestudio : https://www.codingninjas.com/codestudio/problems/count-inversions_6
 # solution approach 1: brute force
 #    count the number of inversions in the array using two nested loops
 def getInversions(arr, n) :
-    count = [0]*n
+    count = 0
 
     for i in range(n-1):
         for j in range(i+1, n ):
             if arr[i] > arr[j]:
-                count[i] += 1
+                count += 1
 
 
-    return sum(count)
+    return count
 
 
 # solution 2 : merge sort
