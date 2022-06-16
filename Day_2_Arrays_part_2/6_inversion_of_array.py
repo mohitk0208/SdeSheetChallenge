@@ -26,3 +26,6 @@ def getInversions(arr, n) :
 
 
     return sum(count)
+
+
+# solution 2 : merge sort
