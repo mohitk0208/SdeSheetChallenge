@@ -13,24 +13,32 @@ codestudio : https://www.codingninjas.com/codestudio/problems/893405?topList=str
 '''
 
 # leetcode solution
+# SC -> O(n) and TC -> O(n)
 class Solution:
     def maxProfit(self, prices: List[int]) -> int:
-        min_stack = [prices[0]]                   # contains nearest smaller to left NSR
+
+        # --------------------- CONSTRUCT LIST TO STORE SMALLEST ELEMENT TO LEFT FOR EACH INDEX O(n)----------------------------
+
+        min_stack = [prices[0]]                   # contains smallest element towards to left
 
         for i in range(1, len(prices)):
-            min_stack.append(min(min_stack[-1], prices[i])) # add the nearest smaller to left NSR
+            min_stack.append(min(min_stack[-1], prices[i])) # add the current smallest to left
+        # ----------------------------------------------
 
-        max_stack_r = [prices[-1]]                # contains nearest greater to right NGR
+        # ---------------------CONSTRUCT LIST TO STORE LARGEST ELEMENT TO RIGHT FOR EACH INDEX O(n)---------------------------
+        max_stack_r = [prices[-1]]                # contains greatest element to right
         for i in range(len(prices) - 2, -1, -1):
-            max_stack_r.append(max(max_stack_r[-1], prices[i])) # add the nearest greater to right NGR
+            max_stack_r.append(max(max_stack_r[-1], prices[i]))
 
         max_stack_r.reverse()
+        # ------------------------------------------------
 
+        # ---------------------CHECK DIFFERENCE FOR EACH INDEX AND STORE THE MAXIMUM O(n) ---------------------------
         max_ = 0                            # if prices is in decreasing order then max_ will be 0
         for i in range(len(prices)):
             if min_stack[i] < max_stack_r[i]:         # find the max profit from the two stacks
                 max_ = max(max_, max_stack_r[i] - min_stack[i])
-
+        # ------------------------------------------------
 
         return max_
 
