@@ -13,6 +13,9 @@ class Solution:
         if head == None:
             return head
 
+        if n == 0:
+            return head
+
         slow = head
         fast = head
 
