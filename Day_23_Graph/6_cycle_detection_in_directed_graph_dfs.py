@@ -13,6 +13,7 @@ codestudio : https://www.codingninjas.com/codestudio/problems/1062626?topList=st
 # we do so by using another array called `dfsvis`
 
 # solution
+# SC -> O(n) + O(n) and TC -> O(n+e)
 def cycleDFS(node, vis, dfsvis, adj):
     vis[node] = True                # mark the node as visited
     dfsvis[node] = True             # mark the node as visited in the current dfs call
