@@ -14,6 +14,7 @@ codestudio : https://www.codingninjas.com/codestudio/problems/1062626?topList=st
 
 # solution
 # SC -> O(n) + O(n) and TC -> O(n+e)
+# Auxiliary space complexity (ASC) -> O(n)
 def cycleDFS(node, vis, dfsvis, adj):
     vis[node] = True                # mark the node as visited
     dfsvis[node] = True             # mark the node as visited in the current dfs call
