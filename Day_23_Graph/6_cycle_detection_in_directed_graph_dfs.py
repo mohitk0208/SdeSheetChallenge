@@ -9,7 +9,7 @@ codestudio : https://www.codingninjas.com/codestudio/problems/1062626?topList=st
 
 
 # cycle detection for directed graph is little different from undirected graph,
-# in directed, we also need to if the node is visited in the current dfs call or not
+# in directed, we also need to see if the node is visited in the current dfs call or not
 # we do so by using another array called `dfsvis`
 
 # solution

@@ -41,10 +41,10 @@ class Solution:
 
 # approach 2 : use set
 # SC -> O(n) and TC -> O(n) + O(n) + O(n) = O(3n) = O(n)
-#         - make a set
-#         - iterate over each element and check if it exist in set or not
+#         - make a set of `nums`
+#         - iterate over each element x in nums and check if `x-1` exist in set or not
 #         - if exist then move to next element
-#         - if doesn't exist then start counting from current number till the sequence exist in the set
+#         - if doesn't exist (THIS MAY BE THE START OF THE SEQUENCE ) then start counting from current number till the sequence exist in the set
 #         - update max if current count is greater than max_
 class Solution:
     def longestConsecutive(self, nums: List[int]) -> int:

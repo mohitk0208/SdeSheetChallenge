@@ -20,7 +20,7 @@ class Solution:
     def fourSum(self, nums: List[int], target: int) -> List[List[int]]:
 
         n = len(nums)
-        nums.sort() # O(nogn)
+        nums.sort() # O(nlogn)
 
         res = set([])
 

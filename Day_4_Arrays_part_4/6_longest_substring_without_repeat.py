@@ -27,10 +27,8 @@ class Solution:
                 max_ = max(max_, end-start-1)
                 if c[s[end]] > start:
                     start = c[s[end]]
-                c[s[end]] = end
-            else:
-                c[s[end]] = end
 
+            c[s[end]] = end
             end += 1
 
         max_ = max(max_, end - start-1)
