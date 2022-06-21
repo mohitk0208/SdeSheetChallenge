@@ -7,7 +7,7 @@ You have to rotate the image in-place, which means you have to modify the input 
 
 leetcode : https://leetcode.com/problems/rotate-image/
 
-approach :
+approach 1:
     1. transpose the matrix
     2. reverse the rows
 
@@ -71,6 +71,8 @@ class Solution:
             for j in range(n):
                 matrix[i][j] = res[i][j]
 
+
+# approach 2: rotate the corners
 # rotate the corners
 class Solution:
     def rotate(self, matrix: List[List[int]]) -> None:
