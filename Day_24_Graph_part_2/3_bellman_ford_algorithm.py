@@ -33,16 +33,16 @@ class Solution:
     # represented using adjacency matrix representation
     '''
     V: nodes in graph
-    adj: adjacency list for the graph
+    edges: edges list for the graph
     S: Source
     '''
-    def bellman_ford(self, V, adj, S):
+    def bellman_ford(self, V, edges, S):
         dis = [100000000] * V                     # Initialize all distances as infinite (here 100000000)
         dis[S] = 0                                # Distance of source vertex from itself is always 0
 
         for _ in range(V-1):                      # Relax the edges exactly V-1 times
 
-            for edge in adj:
+            for edge in edges:
                 u, v, wt = edge
 
                 if dis[u] == 100000000:
