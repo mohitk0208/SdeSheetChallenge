@@ -20,7 +20,7 @@ leetcode : https://leetcode.com/problems/combination-sum/
 # solution
 # approach : recursive
 # SC -> does not depend on n
-# TC -> O(2^n)
+# TC -> O(2^n*k) + O(nlogm) , k is the average number of elements in the sequences
 class Solution:
     def combinationSum(self, candidates: List[int], target: int) -> List[List[int]]:
 
