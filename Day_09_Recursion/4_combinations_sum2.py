@@ -47,6 +47,8 @@ class Solution:
 
         combinations(candidates, [], 0, 0)
 
+        return ans
+
 
 
 # approach : trying combinations smartly
@@ -81,3 +83,6 @@ class Solution:
                 c = arr[x]
 
         combinations(candidates, [], 0, target)
+
+
+        return ans
