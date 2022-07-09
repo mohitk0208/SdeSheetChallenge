@@ -15,7 +15,7 @@ leetcode : https://leetcode.com/problems/4sum/
 # solution
 
 # approach 1 : three pointers and binary search after sorting
-# SC -> O(n1) and TC -> O(n^3logn)
+# SC -> O(n) and TC -> O(n^3logn)
 class Solution:
     def fourSum(self, nums: List[int], target: int) -> List[List[int]]:
 
