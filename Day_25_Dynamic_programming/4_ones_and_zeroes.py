@@ -59,3 +59,30 @@ class Solution:
 
 
 # approach 2 : The above can be converted to Top down but in that case we would need to make a 3D array that of dimension l*m*n so the recursive approach is more efficient and similar. So Skipping the Top Down approach
+
+
+
+
+# approach 3 : a more efficient recursive approach
+from collections import Counter
+
+class Solution:
+    def findMaxForm(self, strs: List[str], x: int, y: int) -> int:
+
+        n_str = [Counter(s) for s in strs]
+
+        @cache                                # use @cache decorator for memoization
+        def dp(i, mm, nn):
+            if mm < 0 or nn < 0:
+                return -float("inf")
+
+            if mm == 0 and nn == 0:
+                return 0
+
+            if i == len(strs):
+                return 0
+
+            return max(dp(i+1, mm, nn),1+ dp(i+1, mm-n_str[i]['0'], nn-n_str[i]['1']))
+
+
+        return dp(0, x, y)
