@@ -1,5 +1,5 @@
 '''
-########################### Rod Cutting #####################
+########################### Minimum Cost to Cut a Stick #####################
 Given a wooden stick of length n units. The stick is labelled from 0 to n. For example, a stick of length 6 is labelled as follows:
 
 Given an integer array cuts where cuts[i] denotes a position you should perform a cut at.
@@ -45,5 +45,24 @@ class Solution:
 
 
 
-# WAS NOT ABLE TO CONSTRUCT AN ITERATIVE SOLUTION
-# approach 2 : iterative
+# approach 2 : iterative (BUT TIME LIMIT GETS EXCEEDED)
+class Solution:
+    def minCost(self, n: int, cuts: List[int]) -> int:
+
+        matrix = [[0]*(n+1) for _ in range(n+1)]
+
+
+        for i in range(n, -1, -1):
+            for j in range(i+1, n+1):
+
+                min_ = float("inf")
+                for cut in cuts:
+                    if i < cut < j :
+                        cost = (j-i) + matrix[i][cut] + matrix[cut][j]
+
+                        min_ = min(min_, cost)
+
+                matrix[i][j] = 0 if min_ == float("inf") else min_
+
+        return matrix[0][n]
+
