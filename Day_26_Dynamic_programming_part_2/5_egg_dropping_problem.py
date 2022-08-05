@@ -50,6 +50,9 @@ class Solution:
 
         def dp(e, f):
 
+            # if only egg then we start from the bottom floor and and move up till we reach the threshold floor
+            # if floor is 0 then no attempt is possible so moves is 0
+            # if floor is 1 then only one move is required
             if e == 1 or f == 0  or f == 1:
                 return f
 
@@ -59,8 +62,15 @@ class Solution:
 
             min_ = float("inf")
             for k in range(1, f+1):
+                # if the egg breaks when dropped from kth floor
+                  # then egg is reduced and threshold floor is below k
+                # if the egg does not break
+                  # then egg remains same and threshold floor is above k
+
+                # to choice in the `worst case` we add one attempt to the max of attempts in either case
                 val = 1 + max(dp(e-1, k-1), dp(e, f-k))
 
+                # we choose minimum of attempts in all worst case
                 min_ = min(min_, val)
 
             matrix[e][f] = min_
