@@ -35,3 +35,38 @@ class Solution:
             return temp
 
         return construct(0, len(preorder))
+
+
+
+
+# approach 2 : approach 1 after memoization
+class Solution:
+    def buildTree(self, preorder: List[int], inorder: List[int]) -> Optional[TreeNode]:
+        self.index = -1
+        self.d = {}
+
+        def construct(i, j ):
+            if i >= j:
+                return None
+
+            self.index += 1
+
+            temp = TreeNode(preorder[self.index])
+
+            split_point = self.d.get(preorder[self.index], i)
+
+            while split_point < j:
+                if inorder[split_point] == preorder[self.index]:
+                    self.d[inorder[split_point]] = split_point
+                    break
+
+                self.d[inorder[split_point]] = split_point
+                split_point += 1
+
+
+            temp.left = construct(i, split_point)
+            temp.right = construct(split_point+1, j)
+
+            return temp
+
+        return construct(0, len(preorder))

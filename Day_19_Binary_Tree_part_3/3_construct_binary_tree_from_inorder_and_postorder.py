@@ -8,7 +8,7 @@ leetcode : https://leetcode.com/problems/construct-binary-tree-from-inorder-and-
 '''
 
 # solution
-# approach 1 : recursive
+# approach 1 : recursive with memoization
 class Solution:
     def buildTree(self, inorder: List[int], postorder: List[int]) -> Optional[TreeNode]:
         self.index = len(postorder)
