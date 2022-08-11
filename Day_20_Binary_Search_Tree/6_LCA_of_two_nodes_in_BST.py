@@ -13,8 +13,8 @@ leetcode : https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-sear
 # solution
 # approach 1 : recursive
 # if p and q are both less than node then call lca() for node.left
-# if p and q are both greater than node then call lca() for node.right
-# else call lca on both node.left and node.right
+# else if p and q are both greater than node then call lca() for node.right
+# else node is the parent
 class Solution:
     def lowestCommonAncestor(self, root: 'TreeNode', p: 'TreeNode', q: 'TreeNode') -> 'TreeNode':
 
@@ -28,20 +28,9 @@ class Solution:
             if node.val < p.val and node.val < q.val:   #if p and q are both greater than node then call lca() for node.right
                 return lca(node.right)
 
-            if node == p or node == q:    # if node is either p or q return return it
-                return node
 
-            l = lca(node.left)
-            r = lca(node.right)
+            return node       # node is the LCA
 
-            if l != None and r == None:
-                return l
 
-            elif l == None and r != None:
-                return r
-            elif l != None and r != None:
-                return node
-
-            return None
 
         return lca(root)
